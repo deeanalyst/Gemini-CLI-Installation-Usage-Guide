@@ -67,7 +67,7 @@ gemini --version
 - If you have done this, while still on the Google Console homepage, click on the navigation menu at the top-left of the page.
   Navigate this way: APIs & Services >> Enabled APIs & services
 - Click on the `+ Enable APIs & services` button to enable an API.
-- Search `Gemini API`, should be the first option on the list, click it & enable it.
+- Search for `Gemini API`, it should be the first option on the list, click it & enable it.
 - Now, go back to `Google Studio` and refresh the page, you should now be able to get an API key by choosing your project which you created in `Google Console` and creating an API key. Copy the key and do this in your terminal.
 
 ### Export your API Key to use Gemini
