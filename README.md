@@ -14,21 +14,21 @@ Before you begin, ensure you have the following installed on your system:
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
 ```
-### Install `npm`
+Install `Nodejs` & `npm` in one go
 ```bash
+# 1️⃣ Update package list
 sudo apt update
-sudo apt install npm -y
-npm install -g npm@11.5.2
 
-# confirm installation was done properly
-npm -v
-node -v
-```
-### Or Install `Nodejs` & `npm` in one go
-```bash
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+# 2️⃣ Install Node.js 22 from NodeSource (this includes npm)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
-npm install -g npm@11.5.2
+
+# 3️⃣ Upgrade npm to the exact version you want
+sudo npm install -g npm@11.5.2
+
+# 4️⃣ Verify installation
+node -v   # should be v22.x.x
+npm -v    # should be 11.5.2
 ```
 ---
 
