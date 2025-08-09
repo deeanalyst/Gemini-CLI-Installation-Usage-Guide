@@ -101,7 +101,7 @@ The first time you run the command or any time you start Gemini without running 
 
 <img width="576" height="284" alt="Gemini Login Screen" src="https://github.com/user-attachments/assets/ac8ee84b-790c-408a-b8b4-8287a2e08607" />
 
-Recommended Option: **2. Use Gemini API Key**  (Based on how this guide is tailored)
+Recommended Option: **`2. Use Gemini API Key`**  (Based on how this guide is tailored)
 
 Follow the on-screen instructions using your arrow keys to choose an option amongst the 3 you were given, to complete the authentication process.
 
