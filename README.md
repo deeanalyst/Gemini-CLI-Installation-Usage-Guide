@@ -24,7 +24,7 @@ npm install -g npm@11.5.2
 npm -v
 node -v
 ```
-### Or Install `Nodejs & npm` in one go
+### Or Install `Nodejs` & `npm` in one go
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt install -y nodejs
