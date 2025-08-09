@@ -94,7 +94,7 @@ Replace `YOUR_API_KEY` with the API Key you copied from `Google Studio`
 ```bash
 gemini
 ```
-You run this command from either your `root` directory or the particular folder you are trying to work with. Now, `Gemini recommends the latter.
+You run this command from either your `root` directory or the particular folder you are trying to work with. Now, `Gemini` recommends the latter because it helps it to pinpoint your needs and reduces waste of time and resources.
 
 ### Authentication
 The first time you run the command or any time you start Gemini without running `source ~/.bashrc` after previously exporting your API Key to the `.bashrc` file, you will be prompted to choose between three (3) methods you would prefer to use to firing up the Gemini CLI service.
