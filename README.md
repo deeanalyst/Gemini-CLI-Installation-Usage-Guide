@@ -18,6 +18,7 @@ sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano aut
 ```bash
 sudo apt update
 sudo apt install npm -y
+npm install -g npm@11.5.2
 
 # confirm installation was done properly
 npm -v
@@ -27,6 +28,7 @@ node -v
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt install -y nodejs
+npm install -g npm@11.5.2
 ```
 ---
 
