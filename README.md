@@ -74,22 +74,23 @@ gemini --version
 
 ### Export your API Key to use Gemini
 ```bash
-export GEMINI_API_KEY="AIzaSyDFO9VWSG0BrnIevK91bzJi68xx4iMQL8s" >> ~/.bashrc
+echo 'export GEMINI_API_KEY="YOUR_API_KEY"' >> ~/.bashrc
 ```
+Replace `YOUR_API_KEY` with the API Key you copied from `Googlee Studio`
 
+### Start using Gemini CLI
 ```bash
 gemini
 ```
+You run this command from either `root` or the particular folder you are trying to work with. Now, the latter is recommended.
+
 ### Authentication
 The first time you run the command or any time you start Gemini without running `source ~/.bashrc` after previously exporting your API Key to the `.bashrc` file, you will be prompted to choose between three (3) methods you would prefer to use to firing up the Gemini CLI service.
 
 
-Follow the on-screen instructions to complete the authentication process. This will typically involve signing in through a web browser and granting the necessary permissions. Your credentials will be stored locally for future sessions.
+Follow the on-screen instructions using your arrow keys to choose an option amongst the 3 you were given, to complete the authentication process.
 
 ---
-
-You are now ready to use the Gemini CLI! For a guide on how to use the CLI's features, please refer to the `GEMINI_CLI_GUIDE.md` document.
-
 
 # A Guide to Using the Gemini CLI Agent
 
