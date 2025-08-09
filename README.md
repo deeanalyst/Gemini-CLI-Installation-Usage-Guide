@@ -36,19 +36,18 @@ Choose one of the following installation methods. The appropriate method depends
 
 ### Method A (Recommemnded): Using NPM (for Node.js)
 **Install the CLI:** Open your terminal and run the following command. The `-g` flag installs it globally, making the `gemini` command available system-wide.
-
-    ```
-    npm install -g @google/gemini-cli
-    ```
+```bash
+npm install -g @google/gemini-cli
+```
 ### Method B: Using Pip (for Python)
 
 If the Gemini CLI is distributed as a Python package, you can install it using `pip`.
 
 1.  **Install Python:** If you don't have Python, download and install it from [python.org](https://python.org/). Version 3.8 or higher is recommended.
 2.  **Install the CLI:** Open your terminal and run the following command:
-    ```
-    pip install google-gemini-cli
-    ```
+```bash
+pip install google-gemini-cli
+```
 ---
 
 ## 3. Post-Installation Steps
