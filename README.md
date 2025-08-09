@@ -1,3 +1,89 @@
+# Installing the Gemini CLI
+
+This guide provides instructions on how to install and set up the Gemini CLI to interact with Gemini services from your terminal.
+
+## 1. Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+*   **A compatible operating system:** Linux, macOS, or Windows (with WSL).
+*   **A package manager:** Depending on the installation method, you will need either `npm` (which comes with Node.js) or `pip` (which comes with Python).
+
+---
+
+## 2. Installation
+
+Choose one of the following installation methods. The appropriate method depends on how the Gemini CLI is packaged and distributed.
+
+### Method A: Using NPM (for Node.js)
+
+If the Gemini CLI is distributed as a Node.js package, you can install it using `npm`.
+
+1.  **Install Node.js:** If you don't have Node.js, download and install it from [nodejs.org](https://nodejs.org/). It is recommended to use the latest LTS version.
+2.  **Install the CLI:** Open your terminal and run the following command. The `-g` flag installs it globally, making the `gemini` command available system-wide.
+    ```bash
+    npm install -g @google/gemini-cli
+    ```
+    *(Note: The package name `@google/gemini-cli` is an example. Please replace it with the actual package name if it's different.)*
+
+### Method B: Using Pip (for Python)
+
+If the Gemini CLI is distributed as a Python package, you can install it using `pip`.
+
+1.  **Install Python:** If you don't have Python, download and install it from [python.org](https://python.org/). Version 3.8 or higher is recommended.
+2.  **Install the CLI:** Open your terminal and run the following command:
+    ```bash
+    pip install google-gemini-cli
+    ```
+    *(Note: The package name `google-gemini-cli` is an example. Please replace it with the actual package name if it's different.)*
+
+### Method C: Using a Shell Script
+
+For some distributions, you might be provided with a direct installation script. This is common for pre-compiled binaries.
+
+1.  **Download the script:** Use `curl` or `wget` to download the installation script.
+    ```bash
+    curl -sS https://example.com/install.sh -o install-gemini.sh
+    ```
+    *(Note: Replace `https://example.com/install.sh` with the actual URL of the installation script.)*
+2.  **Make the script executable:**
+    ```bash
+    chmod +x install-gemini.sh
+    ```
+3.  **Run the script:**
+    ```bash
+    ./install-gemini.sh
+    ```
+
+---
+
+## 3. Post-Installation Steps
+
+### Verify the Installation
+
+After the installation is complete, verify that the CLI is accessible from your terminal by checking its version.
+
+```bash
+gemini --version
+```
+
+If you get a "command not found" error, you may need to restart your terminal or adjust your system's `PATH` environment variable to include the directory where the package was installed.
+
+### Authentication
+
+The first time you run a command, you will likely be prompted to authenticate with your Google account.
+
+```bash
+gemini login
+```
+
+Follow the on-screen instructions to complete the authentication process. This will typically involve signing in through a web browser and granting the necessary permissions. Your credentials will be stored locally for future sessions.
+
+---
+
+You are now ready to use the Gemini CLI! For a guide on how to use the CLI's features, please refer to the `GEMINI_CLI_GUIDE.md` document.
+
+
 # A Guide to Using the Gemini CLI Agent
 
 Welcome! This guide will help you effectively use the Gemini CLI agent for your software engineering tasks.
