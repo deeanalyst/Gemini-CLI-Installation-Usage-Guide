@@ -9,23 +9,36 @@ Before you begin, ensure you have the following installed on your system:
 *   **A compatible operating system:** Linux, macOS, or Windows (with WSL).
 *   **A package manager:** Depending on the installation method, you will need either `npm` (which comes with Node.js) or `pip` (which comes with Python).
 
+### Update & Install system packages & dependecies
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
+```
+### Install `npm`
+```bash
+sudo apt update
+sudo apt install npm -y
+
+# confirm installation was done properly
+npm -v
+node -v
+```
+### Or Install `Nodejs & npm` in one go
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install -y nodejs
+```
 ---
 
 ## 2. Installation
 
 Choose one of the following installation methods. The appropriate method depends on how the Gemini CLI is packaged and distributed.
 
-### Method A: Using NPM (for Node.js)
-
-If the Gemini CLI is distributed as a Node.js package, you can install it using `npm`.
-
-1.  **Install Node.js:** If you don't have Node.js, download and install it from [nodejs.org](https://nodejs.org/). It is recommended to use the latest LTS version.
-2.  **Install the CLI:** Open your terminal and run the following command. The `-g` flag installs it globally, making the `gemini` command available system-wide.
+### Method A (Recommemnded): Using NPM (for Node.js)
+**Install the CLI:** Open your terminal and run the following command. The `-g` flag installs it globally, making the `gemini` command available system-wide.
     ```bash
     npm install -g @google/gemini-cli
     ```
-    *(Note: The package name `@google/gemini-cli` is an example. Please replace it with the actual package name if it's different.)*
-
 ### Method B: Using Pip (for Python)
 
 If the Gemini CLI is distributed as a Python package, you can install it using `pip`.
@@ -35,26 +48,6 @@ If the Gemini CLI is distributed as a Python package, you can install it using `
     ```bash
     pip install google-gemini-cli
     ```
-    *(Note: The package name `google-gemini-cli` is an example. Please replace it with the actual package name if it's different.)*
-
-### Method C: Using a Shell Script
-
-For some distributions, you might be provided with a direct installation script. This is common for pre-compiled binaries.
-
-1.  **Download the script:** Use `curl` or `wget` to download the installation script.
-    ```bash
-    curl -sS https://example.com/install.sh -o install-gemini.sh
-    ```
-    *(Note: Replace `https://example.com/install.sh` with the actual URL of the installation script.)*
-2.  **Make the script executable:**
-    ```bash
-    chmod +x install-gemini.sh
-    ```
-3.  **Run the script:**
-    ```bash
-    ./install-gemini.sh
-    ```
-
 ---
 
 ## 3. Post-Installation Steps
@@ -64,18 +57,30 @@ For some distributions, you might be provided with a direct installation script.
 After the installation is complete, verify that the CLI is accessible from your terminal by checking its version.
 
 ```bash
+source ~/.bashrc
 gemini --version
 ```
 
-If you get a "command not found" error, you may need to restart your terminal or adjust your system's `PATH` environment variable to include the directory where the package was installed.
+### Getting and Exporting your API Key
+- Visit [Google Studio](https://aistudio.google.com/app/u/2/apikey) and sign in or sign up with your Google account.
+- Attempt creating an API Key, it might not let you without you creating a default project on Google Console. If it does prompt you to do so? You would need to visit [Google Console](https://console.cloud.google.com/), sign in or sign up with your Google account, then at the top left of your screen you should see a button "Select Project". Click it then on the dialog box that poos up, click "Create a new project" on the top right. Name the project whatever you like, don't input a location, just "Create".
+- If you have done this, while still on the Google Console homepage, click on the navigation menu at the top-left of the page.
+  Navigate this way: APIs & Services >> Enabled APIs & services
+- Click on the `+ Enable APIs & services` button to enable an API.
+- Search `Gemini API`, should be the first option on the list, click it & enable it.
+- Now, go back to `Google Studio` and refresh the page, you should now be able to get an API key by choosing your project which you created in `Google Console` and creating an API key. Copy the key and do this in your terminal.
 
-### Authentication
-
-The first time you run a command, you will likely be prompted to authenticate with your Google account.
+### Export your API Key to use Gemini
+```bash
+export GEMINI_API_KEY="AIzaSyDFO9VWSG0BrnIevK91bzJi68xx4iMQL8s" >> ~/.bashrc
+```
 
 ```bash
-gemini login
+gemini
 ```
+### Authentication
+The first time you run the command or any time you start Gemini without running `source ~/.bashrc` after previously exporting your API Key to the `.bashrc` file, you will be prompted to choose between three (3) methods you would prefer to use to firing up the Gemini CLI service.
+
 
 Follow the on-screen instructions to complete the authentication process. This will typically involve signing in through a web browser and granting the necessary permissions. Your credentials will be stored locally for future sessions.
 
