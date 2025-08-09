@@ -63,9 +63,14 @@ source ~/.bashrc
 gemini --version
 ```
 
+<img width="436" height="111" alt="Gemini Version Check" src="https://github.com/user-attachments/assets/efe0b0c1-0692-48a8-8954-f507ab7edf4d" />
+
 ### Getting and Exporting your API Key
 - Visit [Google Studio](https://aistudio.google.com/app/u/2/apikey) and sign in or sign up with your Google account.
 - Attempt creating an API Key, it might not let you without you creating a default project on Google Console. If it does prompt you to do so? You would need to visit [Google Console](https://console.cloud.google.com/), sign in or sign up with your Google account, then at the top left of your screen you should see a button "Select Project". Click it then on the dialog box that poos up, click "Create a new project" on the top right. Name the project whatever you like, don't input a location, just "Create".
+
+<img width="624" height="264" alt="Google Console Homepage" src="https://github.com/user-attachments/assets/b669d96a-6b8c-4bd4-8fd9-4bd789a6b863" />
+
 - If you have done this, while still on the Google Console homepage, click on the navigation menu at the top-left of the page.
   Navigate this way: APIs & Services >> Enabled APIs & services
 - Click on the `+ Enable APIs & services` button to enable an API.
@@ -75,18 +80,27 @@ gemini --version
 ### Export your API Key to use Gemini
 ```bash
 echo 'export GEMINI_API_KEY="YOUR_API_KEY"' >> ~/.bashrc
+source ~/.bashrc
 ```
-Replace `YOUR_API_KEY` with the API Key you copied from `Googlee Studio`
+Replace `YOUR_API_KEY` with the API Key you copied from `Google Studio`
+> `NB`: You must always use `source ~/.bashrc` whenever you restart your terminal so you don't meet the login interface.
 
-### Start using Gemini CLI
+> `NB`: If you ever exhaust your daily quota of requests you either use another Google mail to generate a new API Key or you wait for the day to reset. 😂😂😂
+
+> `NB`: If your terminal restarts or you quit `Gemini` the CLI loses memory, so always make sure you have a good internet connection and try to document your queries so you can easily remind it about what it had done for you in the past.
+
+### Start the Gemini CLI
 ```bash
 gemini
 ```
-You run this command from either `root` or the particular folder you are trying to work with. Now, the latter is recommended.
+You run this command from either your `root` directory or the particular folder you are trying to work with. Now, `Gemini recommends the latter.
 
 ### Authentication
 The first time you run the command or any time you start Gemini without running `source ~/.bashrc` after previously exporting your API Key to the `.bashrc` file, you will be prompted to choose between three (3) methods you would prefer to use to firing up the Gemini CLI service.
 
+<img width="576" height="284" alt="Gemini Login Screen" src="https://github.com/user-attachments/assets/ac8ee84b-790c-408a-b8b4-8287a2e08607" />
+
+Recommended Option: **2. Use Gemini API Key**  (Based on how this guide is tailored)
 
 Follow the on-screen instructions using your arrow keys to choose an option amongst the 3 you were given, to complete the authentication process.
 
@@ -98,17 +112,17 @@ Welcome! This guide will help you effectively use the Gemini CLI agent for your 
 
 ## 1. How It Works: The Core Loop
 
-My primary goal is to help you with your development tasks safely and efficiently. The interaction process follows a consistent pattern:
+The primary goal is to help you with your development tasks safely and efficiently. The interaction process follows a consistent pattern:
 
-1.  **You Give a Command:** You ask me to do something (e.g., "Refactor this file," "Find all usages of this function," "Run the tests").
-2.  **I Analyze & Plan:** I'll use my tools to understand your codebase, the context of your request, and form a step-by-step plan. I will often check for tests, project dependencies, and existing code conventions.
-3.  **I Propose an Action:** I will show you the exact command or code change I intend to make.
+1.  **You Give a Command:** You ask Gemini to do something (e.g., "Refactor this file," "Find all usages of this function," "Run the tests").
+2.  **It Analyzes & Plans:** Gemini will use its tools to understand your codebase, the context of your request, and form a step-by-step plan. It will often check for tests, project dependencies, and existing code conventions.
+3.  **It Propose an Action:** It will show you the exact command or code change it intends to make.
 4.  **You Approve or Deny:** **No action is taken without your explicit approval.** You will be prompted to confirm each step, giving you complete control over your system and codebase.
-5.  **I Execute & Verify:** Once you approve, I run the command. For code changes, I will try to run tests or linters to ensure the changes are safe and correct.
+5.  **It Executes & Verifies:** Once you approve, it runs the command. For code changes, it will try to run tests or linters to ensure the changes are safe and correct.
 
-## 2. What I Can Do: Key Capabilities
+## 2. What It Can Do: Key Capabilities
 
-You can ask me to perform a wide range of tasks.
+You can ask Gemini to perform a wide range of tasks.
 
 ### Code Interaction
 - **Read & Analyze Code:** "What does the `calculate_totals` function in `src/utils.py` do?"
@@ -130,14 +144,14 @@ You can ask me to perform a wide range of tasks.
 
 To get the best results, follow these tips:
 
--   **Be Specific:** The more detailed your request, the better I can help. Instead of "Fix the bug," try "The login button isn't working. I think the error is in `auth.js`. Please investigate and fix it."
--   **Provide Context:** Mention relevant filenames, function names, or project goals. This helps me narrow down the search and understand your intent.
--   **Trust the Process:** I am designed to be cautious. I will ask clarifying questions and present a plan before making changes. Work with me through this process to ensure the best outcome.
--   **Use the `/help` command** if you need a refresher on what I can do.
+-   **Be Specific:** The more detailed your request, the better it can help. Instead of "Fix the bug," try "The login button isn't working. I think the error is in `auth.js`. Please investigate and fix it."
+-   **Provide Context:** Mention relevant filenames, function names, or project goals. This helps it narrow down the search and understand your intent.
+-   **Trust the Process:** Gemini is designed to be cautious. It will ask clarifying questions and present a plan before making changes. Work with it through this process to ensure the best outcome.
+-   **Use the `/help` command** if you need a refresher on what it can do.
 
 ## 4. Example Workflow: Refactoring a File
 
-Here’s a realistic example of how we might work together:
+Here’s a realistic example of how you both might work together:
 
 **You:**
 > "Refactor `src/api/http.js` to use the `axios` library instead of the native `fetch` API."
@@ -166,3 +180,5 @@ Here’s a realistic example of how we might work together:
 ---
 
 I'm ready to help. What would you like to do?
+
+I hope this guide is useful to your development process. 🫡
