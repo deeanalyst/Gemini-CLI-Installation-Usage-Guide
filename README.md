@@ -180,6 +180,4 @@ Here’s a realistic example of how you both might work together:
 
 ---
 
-I'm ready to help. What would you like to do?
-
 I hope this guide is useful to your development process. 🫡
