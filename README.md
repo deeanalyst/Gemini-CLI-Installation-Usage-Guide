@@ -23,13 +23,16 @@ sudo apt update
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# 3️⃣ Upgrade npm to the exact version you want
-sudo npm install -g npm@20.18.1
-sudo npm use 20.18.1
+# Reload shell
+source ~/.bashrc
 
-# 4️⃣ Verify installation
-node -v   # should be v22.x.x
-npm -v    # should be 11.5.2
+# 3️⃣ Upgrade npm to the exact version you want
+sudo npm install -g npm@20
+sudo npm use 20
+
+# 4️⃣ Verify installation version
+node -v
+npm -v
 ```
 ---
 
