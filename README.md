@@ -16,23 +16,16 @@ sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano aut
 ```
 Install `Nodejs` & `npm` in one go
 ```bash
-# 1️⃣ Update package list
-sudo apt update
+# 1️⃣ Remove any existing node + npm (optional if you want a clean slate)
+sudo apt remove -y nodejs npm
 
-# 2️⃣ Install Node.js 22 from NodeSource (this includes npm)
+# 2️⃣ Update and install Node.js 22 from NodeSource
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# Reload shell
-source ~/.bashrc
-
-# 3️⃣ Upgrade npm to the exact version you want
-sudo npm install -g npm@20
-sudo npm use 20
-
-# 4️⃣ Verify installation version
-node -v
-npm -v
+# 3️⃣ Verify installation
+node -v   # should show v22.x
+npm -v    # should show ~10.x (latest stable)
 ```
 ---
 
